@@ -1,0 +1,6 @@
+//rootProject.name = 'notification'
+include 'processor'
+include 'dispatcher'
+include 'common'
+include 'mfa'
+

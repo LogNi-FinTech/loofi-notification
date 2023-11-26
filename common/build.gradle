@@ -1,0 +1,27 @@
+plugins {
+
+}
+
+group = 'com.loofi'
+version = '0.0.1'
+description = 'Common layer for LooFi Notification'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.data:spring-data-envers'
+    implementation 'org.flywaydb:flyway-core'
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+}
+
+jar {
+    enabled = true
+}
+
+test {
+    useJUnitPlatform()
+}

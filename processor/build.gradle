@@ -1,0 +1,37 @@
+plugins {
+	id 'org.springframework.boot' version '3.1.5'
+}
+
+group = 'com.loofi'
+version = '0.0.1'
+
+java {
+	sourceCompatibility = '17'
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation project(path: ':common')
+//	implementation 'org.springframework.boot:spring-boot-starter-amqp'
+	implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.0.3'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-freemarker'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.jetbrains:annotations:24.0.0'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.amqp:spring-rabbit-test'
+//	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-freemarker', version: '3.1.5'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
