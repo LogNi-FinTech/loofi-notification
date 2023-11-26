@@ -20,7 +20,7 @@ Technology: Java 17, Spring Boot 3.1.5, Postgres
 
 # Example API:
 Create Template:\
-Path: http://localhost:8070/api/v1/template\
+Path: http://localhost:8070/api/v1/template \
 Method: POST\
 Request Body:
 ```
