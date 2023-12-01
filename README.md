@@ -1,4 +1,4 @@
-/# LooFi-notification-service
+# loofi-notification-service
 
 Every tech company requires a notification component. LooFi Notification Service is a simple and robust generic notification system designed for any tech company that needs to send notifications (email, SMS, push) to its customers.
 
