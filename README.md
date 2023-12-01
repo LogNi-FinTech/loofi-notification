@@ -1,4 +1,4 @@
-# LooFi-notification-service
+/# LooFi-notification-service
 
 Every tech company requires a notification component. LooFi Notification Service is a simple and robust generic notification system designed for any tech company that needs to send notifications (email, SMS, push) to its customers.
 
@@ -67,7 +67,7 @@ Request Body:
 Contribution Notes:
 - Priority notification management
 - Dispatcher service (consume notification from MQ and send corresponding channel[e.g Email])
-- MFA service (OTP management)
+- MFA service (OTP/MFA management) and MFA authenticator 
 - Improve code and add any feature
 - Cache notification template
 
