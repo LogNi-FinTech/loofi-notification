@@ -61,4 +61,10 @@ public class Notification extends LoofiAbstractAuditingEntity  {
   @Column(name = "priority")
   @Enumerated(value = EnumType.STRING)
   private NotificationPriority priority;
+
+  @Column(name = "user_identifier")
+  private String userIdentifier;
+
+  @Column(name = "notification_to")
+  private String to;
 }

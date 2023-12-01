@@ -29,7 +29,8 @@ dependencies {
 	implementation 'org.jetbrains:annotations:24.0.0'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.amqp:spring-rabbit-test'
-//	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-freemarker', version: '3.1.5'
+	implementation "org.springframework.boot:spring-boot-starter-security"
+	implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
 }
 
 tasks.named('test') {
