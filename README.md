@@ -70,6 +70,7 @@ Contribution Notes:
 - MFA service (OTP/MFA management) and MFA authenticator 
 - Improve code and add any feature
 - Cache notification template
+- Apache camel integration at dispatcher component
 
 
 # Contact:
