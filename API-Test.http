@@ -1,0 +1,30 @@
+POST http://localhost:8070/api/v1/send
+Content-Type: application/json
+
+{
+  "templateName":"ACCOUNT_BALANCE",
+  "notificationChannel":"EMAIL",
+  "locale":"en",
+  "to":"loofitest001@gmail.com",
+  "variables":{
+    "userName":"LooFi Test Account",
+    "balance":"5000.00"
+  }
+}
+
+###
+POST http://localhost:8070/api/v1/template
+Content-Type: application/json
+
+{
+  "templateName": "ACCOUNT_BALANCE",
+  "description": "User Balance",
+  "notificationChannel": "EMAIL",
+  "subject": "Account Balance",
+  "locale": "en",
+  "template": "Hello ${userName},<br/> Your account balance is ${balance}. <br/> Thanks ",
+  "isHtml": true
+}
+
+###
+

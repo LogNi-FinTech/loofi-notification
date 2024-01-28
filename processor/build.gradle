@@ -21,7 +21,7 @@ repositories {
 
 dependencies {
 	implementation project(path: ':common')
-//	implementation 'org.springframework.boot:spring-boot-starter-amqp'
+	implementation 'org.springframework.boot:spring-boot-starter-amqp'
 	implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.0.3'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-freemarker'
@@ -29,7 +29,7 @@ dependencies {
 	implementation 'org.jetbrains:annotations:24.0.0'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.amqp:spring-rabbit-test'
-	implementation "org.springframework.boot:spring-boot-starter-security"
+//	implementation "org.springframework.boot:spring-boot-starter-security"
 	implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
 }
 
