@@ -9,7 +9,7 @@ import com.loofi.notification.processor.dtos.mfa.MfaRequest;
 
 
 import org.apache.commons.lang3.RandomStringUtils;
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,7 +28,7 @@ import static com.loofi.notification.common.errors.NotificationErrorCode.INVALID
 @RequiredArgsConstructor
 public class MfaCoreService {
   private final MfaCodeRepository mfaCodeRepository;
-  private final PasswordEncoder passwordEncoder;
+  //private final PasswordEncoder passwordEncoder;
   private final int OTP_CODE_LENGTH = 6;
   private final boolean USE_LETTER = true;
   private final boolean USE_NUMBER = true;
@@ -46,7 +46,7 @@ public class MfaCoreService {
       .phoneNumber(mfaRequest.getPhoneNumber())
       .email(mfaRequest.getEmail())
       .generatedAt(Instant.now())
-      .hashedMFA(passwordEncoder.encode(otp))
+      //.hashedMFA(passwordEncoder.encode(otp))
       .used(false)
       .referenceCode(UUID.randomUUID().toString())
       .emailTemplate(mfaRequest.getEmailTemplateName())
@@ -74,12 +74,12 @@ public class MfaCoreService {
     MFACode mfaCode = mfaCodeRepository.findMFACodesByUserIdentifierAndUsedAndCheckCountLessThanAndCreatedDateGreaterThan(mfaCodeDto.getUserIdentifier(), false, 3, creationTime)
       .orElseThrow(() -> new NotificationBusinessException(INVALID_MFA_REQUEST, NotificationErrorCode.ERROR_MAP.get(INVALID_MFA_REQUEST)));
 
-    if (!passwordEncoder.matches(mfaCode.getHashedMFA(), mfaCodeDto.getMfaCode())
-      || !mfaCode.getReferenceCode().equals(mfaCodeDto.getReferenceCode())) {
-      mfaCode.setCheckCount(mfaCode.getCheckCount() + 1);
-      return false;
-    }
-    mfaCode.setUsed(true);
+//    if (!passwordEncoder.matches(mfaCode.getHashedMFA(), mfaCodeDto.getMfaCode())
+//      || !mfaCode.getReferenceCode().equals(mfaCodeDto.getReferenceCode())) {
+//      mfaCode.setCheckCount(mfaCode.getCheckCount() + 1);
+//      return false;
+//    }
+//    mfaCode.setUsed(true);
     return true;
   }
 
